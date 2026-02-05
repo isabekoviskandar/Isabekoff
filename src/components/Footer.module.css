@@ -1,0 +1,124 @@
+.footer {
+    width: 100%;
+    margin-top: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    position: relative;
+    z-index: 10;
+}
+
+.statusBar {
+    display: flex;
+    align-items: center;
+    background: var(--surface0);
+    border-top: 1px solid var(--surface1);
+    height: 32px;
+    overflow: hidden;
+}
+
+.mode {
+    background: var(--accent);
+    color: var(--base);
+    height: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    padding-right: 1.5rem;
+}
+
+.fileInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    color: var(--text);
+    background: var(--surface1);
+    height: 100%;
+    clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+    padding-right: 1.5rem;
+    margin-left: -10px;
+}
+
+.readOnly {
+    color: var(--red);
+    font-size: 0.7rem;
+}
+
+.spacer {
+    flex-grow: 1;
+    background: var(--surface0);
+    height: 100%;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    color: var(--subtext1);
+    height: 100%;
+    position: relative;
+}
+
+.meta::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: var(--surface1);
+}
+
+.position {
+    background: var(--accent);
+    color: var(--base);
+    height: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%, 0 50%);
+    padding-left: 1.5rem;
+}
+
+.coords {
+    font-weight: 700;
+}
+
+.commandLine {
+    background: var(--mantle);
+    padding: 0.5rem 1rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-top: 1px solid var(--surface0);
+}
+
+.prompt {
+    color: var(--subtext0);
+    font-weight: bold;
+}
+
+.command {
+    color: var(--text);
+}
+
+.message {
+    color: var(--subtext1);
+    font-style: italic;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .fileInfo {
+        display: none;
+    }
+
+    .meta {
+        display: none;
+    }
+}

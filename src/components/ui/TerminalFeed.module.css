@@ -1,0 +1,128 @@
+.terminal {
+    background: var(--crust);
+    border-radius: 8px;
+    border: 1px solid var(--surface1);
+    font-family: 'Fira Code', monospace;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: var(--mantle);
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--surface0);
+}
+
+.dots {
+    display: flex;
+    gap: 6px;
+    margin-right: 1rem;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dotRed {
+    background: #ed8796;
+}
+
+.dotYellow {
+    background: #eed49f;
+}
+
+.dotGreen {
+    background: #a6da95;
+}
+
+.title {
+    color: var(--subtext0);
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+.content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    overflow-y: auto;
+    font-size: 0.85rem;
+}
+
+.line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+    animation: slideIn 0.3s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.prompt {
+    color: var(--green);
+    margin-right: 0.25rem;
+}
+
+.command {
+    color: var(--blue);
+}
+
+.msg {
+    color: var(--text);
+    font-style: italic;
+}
+
+.meta {
+    margin-left: auto;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+}
+
+.hash {
+    color: var(--overlay2);
+}
+
+.repo {
+    color: var(--mauve);
+}
+
+.cursorLine {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cursor {
+    width: 8px;
+    height: 16px;
+    background: var(--text);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}

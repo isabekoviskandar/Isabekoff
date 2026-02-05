@@ -1,0 +1,316 @@
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--base);
+    border-bottom: 1px solid var(--surface0);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumb {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+    color: var(--subtext1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tilde {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.separator {
+    color: var(--overlay0);
+    height: 1px;
+    background: var(--surface1);
+    margin: 1.25rem 0;
+}
+
+.path {
+    color: var(--text);
+}
+
+/* Settings Toggle */
+.controls {
+    position: relative;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.settingsToggle {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface0);
+    border: 1px solid var(--surface1);
+    border-radius: 12px;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.cmdTrigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--surface0);
+    border: 1px solid var(--surface1);
+    border-radius: 8px;
+    color: var(--subtext0);
+    font-size: 0.85rem;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cmdTrigger:hover {
+    background: var(--surface1);
+    border-color: var(--overlay0);
+    color: var(--text);
+    transform: translateY(-1px);
+}
+
+.cmdKey {
+    background: var(--surface1);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    color: var(--text);
+    border: 1px solid var(--surface2);
+}
+
+.settingsToggle:hover,
+.settingsToggle.active {
+    background: var(--surface1);
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: rotate(15deg) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Settings Panel */
+.settingsPanel {
+    position: absolute;
+    top: calc(100% + 1rem);
+    right: 0;
+    width: 320px;
+    background: rgba(30, 30, 46, 0.85);
+    /* Fallback for no backdrop-filter */
+    background: var(--mantle);
+    border: 1px solid var(--surface1);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px inset rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter: blur(16px);
+    overflow: hidden;
+}
+
+.settingsPanel.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.panelHeader {
+    margin-bottom: 1.25rem;
+}
+
+.panelTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+}
+
+.panelSubtitle {
+    font-size: 0.75rem;
+    color: var(--subtext0);
+}
+
+.settingGroup {
+    position: relative;
+}
+
+.settingLabel {
+    display: block;
+    color: var(--subtext1);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+/* Theme Grid */
+.themeGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.themeOption {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: var(--surface0);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: var(--text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.themeOption:hover {
+    background: var(--surface1);
+    transform: translateY(-2px);
+}
+
+.themeOption.active {
+    background: var(--surface1);
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.themePreview {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hardcoded theme preview colors */
+.mocha {
+    background: #1e1e2e;
+    border-color: #cba6f7;
+}
+
+.macchiato {
+    background: #24273a;
+    border-color: #8aadf4;
+}
+
+.frappe {
+    background: #303446;
+    border-color: #a6d189;
+}
+
+.latte {
+    background: #eff1f5;
+    border-color: #ea76cb;
+}
+
+.themeName {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+/* Color Grid */
+.colorGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.colorDot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.colorDot:hover {
+    transform: scale(1.15);
+    z-index: 10;
+}
+
+.colorDot.active {
+    border-color: var(--base);
+    box-shadow: 0 0 0 2px var(--text);
+    transform: scale(1.1);
+}
+
+/* Effects Switch */
+.effectRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.switch {
+    width: 44px;
+    height: 24px;
+    background: var(--surface1);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.switch.active {
+    background: var(--accent);
+}
+
+.knob {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform: translateX(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.switch.active .knob {
+    transform: translateX(20px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .settingsPanel {
+        width: 280px;
+        right: -0.5rem;
+    }
+
+    .colorGrid {
+        gap: 0.5rem;
+    }
+
+    .colorDot {
+        width: 24px;
+        height: 24px;
+    }
+}

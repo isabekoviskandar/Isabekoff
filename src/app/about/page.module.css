@@ -1,0 +1,147 @@
+.about {
+    padding: 100px 0 4rem;
+    min-height: 100vh;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text) 0%, var(--subtext0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--subtext0);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.textBlock p {
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.visual {
+    position: relative;
+    height: 400px;
+    background: var(--surface0);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--surface1);
+}
+
+.gridPattern {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--surface1) 1px, transparent 1px),
+        linear-gradient(90deg, var(--surface1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.5;
+}
+
+.codeBlock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--mantle);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--surface1);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+}
+
+.line {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.comment {
+    color: var(--overlay2);
+    font-style: italic;
+}
+
+.keyword {
+    color: var(--mauve);
+}
+
+.string {
+    color: var(--green);
+}
+
+.function {
+    color: var(--blue);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.card {
+    background: var(--surface0);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--surface1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+.cardTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.techList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.techTag {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    background: var(--surface1);
+    color: var(--subtext1);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 768px) {
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .visual {
+        height: 250px;
+        order: -1;
+    }
+}
