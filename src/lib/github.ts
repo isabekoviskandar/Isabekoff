@@ -11,6 +11,9 @@ export interface GitHubRepo {
     forks_count: number;
     language: string;
     topics: string[];
+    id?: number;
+    clone_url?: string;
+    svn_url?: string;
 }
 
 export interface GitHubCommit {
