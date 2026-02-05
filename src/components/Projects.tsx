@@ -14,7 +14,6 @@ export default function Projects() {
         // Manually loading specific projects as requested by user
         const specificRepos: GitHubRepo[] = [
             {
-                id: 101,
                 name: "newcon",
                 description: "Modern conference management platform built with Next.js and Supabase. Features real-time ticketing and virtual stages.",
                 language: "TypeScript",
@@ -22,12 +21,9 @@ export default function Projects() {
                 stargazers_count: 124,
                 forks_count: 32,
                 html_url: "https://github.com/isabekoviskandar/newcon",
-                homepage: "#",
-                clone_url: "",
-                svn_url: ""
+                homepage: "#"
             },
             {
-                id: 102,
                 name: "E-commerce",
                 description: "Full-stack e-commerce solution with Laravel backend and React frontend. Includes Stripe integration and admin dashboard.",
                 language: "PHP",
@@ -35,12 +31,9 @@ export default function Projects() {
                 stargazers_count: 89,
                 forks_count: 15,
                 html_url: "https://github.com/isabekoviskandar/e-commerce",
-                homepage: "#",
-                clone_url: "",
-                svn_url: ""
+                homepage: "#"
             },
             {
-                id: 103,
                 name: "Lets-get-rusty",
                 description: "A collection of Rust CLI tools and utilities. Exploring system programming and memory safety patterns.",
                 language: "Rust",
@@ -48,9 +41,7 @@ export default function Projects() {
                 stargazers_count: 245,
                 forks_count: 42,
                 html_url: "https://github.com/isabekoviskandar/lets-get-rusty",
-                homepage: "#",
-                clone_url: "",
-                svn_url: ""
+                homepage: "#"
             }
         ];
 
