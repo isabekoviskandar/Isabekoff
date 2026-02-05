@@ -29,7 +29,7 @@ export default function FadeIn({
             transition: {
                 duration: 0.6,
                 delay: delay,
-                ease: [0.21, 0.47, 0.32, 0.98] // Smooth custom easing
+                ease: [0.21, 0.47, 0.32, 0.98] as const // Smooth custom easing
             }
         }
     };
